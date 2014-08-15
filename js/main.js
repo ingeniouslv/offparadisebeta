@@ -62,6 +62,10 @@
 			keyboard	: true
 		});
 		
+		if( $('.video-wrapper')[0] ) {
+			$('.video-wrapper').fitVids();
+		}
+		
 		$("select").selectOrDie();
 	});
 	

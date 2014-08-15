@@ -13,22 +13,9 @@
 	        					<figure class="author"></figure>
 	        				</div>
 	        			</div>
-	        			<div class="post-slideshow slide-scale" data-plugin-name="slideshow" data-autoplay="true" data-fullscreen="true">
-	        				<div id="slideshow">
-		        				<div class="cover slide fade" data-slide-type="image">
-		        					<img src="<?php bloginfo('template_directory'); ?>/inc/img/photo/R0020703.JPG" />
-		        				</div>
-		        				<div data-slide-type="image" class="slide fade">
-		        					<img src="<?php bloginfo('template_directory'); ?>/inc/img/photo/R0020730.JPG" />
-		        				</div>
-		        				<div data-slide-type="image" class="slide fade">
-		        					<img src="<?php bloginfo('template_directory'); ?>/inc/img/photo/R0020745.jpg" />
-		        				</div>
-		        				<div data-slide-type="image" class="slide fade">
-		        					<img src="<?php bloginfo('template_directory'); ?>/inc/img/photo/R0020748.JPG" />
-		        				</div>
-		        			</div> <!-- /#slideshow -->
-	        			</div>
+	        			
+	        			<?php get_template_part( 'loop', get_post_format() ); ?>
+	        			
 	        		</div>
 	        		
 	        <?php endwhile; ?>

@@ -32,6 +32,10 @@ function _s_setup() {
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
+	
+	// Custom fields for Post Formats
+	include_once( 'admin/acf/acf.php' );
+	include_once( 'admin/acf/acf-fields.php' );	
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -58,7 +62,7 @@ function _s_setup() {
 	 * See http://codex.wordpress.org/Post_Formats
 	 */
 	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'quote', 'link'
+		'video', 'quote', 'link', 'gallery', 'image'
 	) );
 
 	// Setup the WordPress core custom background feature.

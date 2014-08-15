@@ -78,6 +78,10 @@ textarea {
     resize: vertical;
 }
 
+time.updated {
+	display: none;
+}
+
 /* ==========================================================================
    Chrome Frame prompt
    ========================================================================== */
@@ -259,6 +263,10 @@ header.global nav.visible-phone select {
 	top: 55%;	
 }
 
+.story-header:hover .post-title {
+	opacity: 0.3;
+}
+
 .post-title .title-1 {
 	font-family: PT sans, 'Old Standard TT', georgia;
 	font-weight: 400;
@@ -276,6 +284,10 @@ header.global nav.visible-phone select {
 
 .post-title .date {
 	margin: 0 15px;
+}
+
+.post-title .title-meta a {
+	color: #fff;
 }
 
 .flex-control-nav.flex-control-paging, .flex-direction-nav { display: none; }

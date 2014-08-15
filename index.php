@@ -13,34 +13,177 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-		<?php if ( have_posts() ) : ?>
-
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
+	
+        		<section class="story-header">
+        		
+				<?php 
+				
+					get_template_part( 'content', 'home' );
 				?>
-
-			<?php endwhile; ?>
-
-			<?php _s_paging_nav(); ?>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'content', 'none' ); ?>
-
-		<?php endif; ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
+        		
+        		</section>
+        		
+	    		<section class="site-translate">
+        		
+		<?php 
+			/* get_template_part( 'content', get_post_format() ); */
+			if ( is_home() ) :
+				query_posts( $query_string . '&posts_per_page=1' );			
+				while ( have_posts() ) : the_post(); 
+		?>
+        		
+	        	<article id="post-<?php the_ID(); ?>" class="article">
+	        		<div class="container">
+	        			<div class="row-fluid">
+	        			
+	        				<div class="content-sidebar span3 hidden-phone">
+	        					<section class="post-meta" data-offset-top="0">
+		        					<div class="post-meta-info">
+				        				
+				        				<p class="byline author vcard">
+				        					By <span class="fn"><?php the_author(); ?></span>
+				        				</p>
+		        					</div>
+		        					<aside class="social-media-menu">
+		        						<ul class="unstyled">
+				        					<li class="first">Twitter</li>
+				        					<li>Facebook</li>
+				        					<li>Instagram</li>
+		        						</ul>
+		        					</aside>
+	        					</section>
+	        				</div>
+	        			
+	        				<div class="span9 entry">
+			        			<header class="entry-title">
+			        				<h1><?php the_title(); ?></h1>
+			        				<h3 class="description"><?php the_excerpt(); ?></h3>
+			        				<div class="entry-meta"><p>Words by <?php the_author(); ?><span style="margin-left: 242px">Photography: <?php the_author(); ?></span></p>
+</div>
+			        			</header>
+			        			
+			        			<section class="entry-content">
+			        				<?php the_content(); ?>
+			        			</section>
+			        			
+			        			<footer class="row-fluid author">
+			        				<figure class="span5">
+			        					<img src="<?php bloginfo('template_directory'); ?>/inc/img/profiles/profile_neek.jpg" />
+			        				</figure>
+			        				
+			        				<div class="span7 text">
+				        				<h4><?php the_author(); ?></h4>
+				        				<p class="info"><?php echo get_the_author_meta('user_url'); ?> - #OffParadise - <?php echo get_the_author_meta('twitter'); ?></p>
+				        				<p><?php echo get_the_author_meta('description'); ?></p>
+				        				<h5>Follow <?php the_author(); ?></h5>
+				        				<ul class="unstyled">
+				        					<li>Twitter: @<?php echo get_the_author_meta('twitter'); ?></li>
+				        					<li>Instagram: @<?php echo get_the_author_meta('twitter'); ?></li>
+				        				</ul>
+			        				</div>
+			        			</footer>
+			        			
+		        			</div>
+	        			</div>
+	        			
+	        		</div>
+	        	</article>
+	        	
+	        	<?php endwhile; endif; ?>
+	        	
+	        	<footer id="footer" class="hidden-phone">
+	        		<div class="container-fulid">
+<!--
+	        			<div class="row-fluid related">
+	        				<div class="container">
+		        				<h2 class="title">Previously OFF⋅PARADISE</h2>
+		        				<div class="row-fluid">
+		        				
+		        					<div class="span2">
+			        					<a href="#">
+			        						<div class="overlay"></div>
+			        						<img src="img/barnaby-roper-fashion-film.jpeg" width="100%">
+			        					</a>
+			        					<time class="issue-date" datetime="2012-21-12 12:12:12-0400" pubdate>Friday, December 21, 2012</time>
+			        					<a href="#">
+			        						<span class="title">Georgia May Jagger for Hudson</span>
+			        					</a>
+			        					<span class="description">The Model of the Moment Designs a Retro-Inspired Denim Collection</span>
+			        				</div>
+		        				
+		        					<div class="span2">
+			        					<a href="#">
+			        						<div class="overlay"></div>
+			        						<img src="img/victoire-de-castellanes-jewelry-show.jpeg" width="100%">
+			        					</a>
+			        					<time class="issue-date" datetime="2012-21-12 12:12:12-0400" pubdate>Friday, December 21, 2012</time>
+			        					<a href="#">
+			        						<span class="title">Georgia May Jagger for Hudson</span>
+			        					</a>
+			        					<span class="description">The Model of the Moment Designs a Retro-Inspired Denim Collection</span>
+			        				</div>
+		        				
+		        					<div class="span2">
+			        					<a href="#">
+			        						<div class="overlay"></div>
+			        						<img src="img/georgia-may-jagger-for-hudson.jpeg" width="100%">
+			        					</a>
+			        					<time class="issue-date" datetime="2012-21-12 12:12:12-0400" pubdate>Friday, December 21, 2012</time>
+			        					<a href="#">
+			        						<span class="title">Georgia May Jagger for Hudson</span>
+			        					</a>
+			        					<span class="description">The Model of the Moment Designs a Retro-Inspired Denim Collection</span>
+			        				</div>
+		        				
+		        					<div class="span2">
+			        					<a href="#">
+			        						<div class="overlay"></div>
+			        						<img src="img/victoire-de-castellanes-jewelry-show.jpeg" width="100%">
+			        					</a>
+			        					<time class="issue-date" datetime="2012-21-12 12:12:12-0400" pubdate>Friday, December 21, 2012</time>
+			        					<a href="#">
+			        						<span class="title">Georgia May Jagger for Hudson</span>
+			        					</a>
+			        					<span class="description">The Model of the Moment Designs a Retro-Inspired Denim Collection</span>
+			        				</div>
+		        				
+		        					<div class="span2">
+			        					<a href="#">
+			        						<div class="overlay"></div>
+			        						<img src="img/contributor.jpeg" width="100%">
+			        					</a>
+			        					<time class="issue-date" datetime="2012-21-12 12:12:12-0400" pubdate>Friday, December 21, 2012</time>
+			        					<a href="#">
+			        						<span class="title">Georgia May Jagger for Hudson</span>
+			        					</a>
+			        					<span class="description">The Model of the Moment Designs a Retro-Inspired Denim Collection</span>
+			        				</div>
+		        				
+		        					<div class="span2">
+			        					<a href="#">
+			        						<div class="overlay"></div>
+			        						<img src="img/barnaby-roper-fashion-film.jpeg" width="100%">
+			        					</a>
+			        					<time class="issue-date" datetime="2012-21-12 12:12:12-0400" pubdate>Friday, December 21, 2012</time>
+			        					<a href="#">
+			        						<span class="title">Georgia May Jagger for Hudson</span>
+			        					</a>
+			        					<span class="description">The Model of the Moment Designs a Retro-Inspired Denim Collection</span>
+			        				</div>
+			        				
+		        				</div>
+	        				</div>
+	        			</div>
+-->
+	        			
+	        			<div class="row-fluid copy">
+	        				<div class="container">
+		        				<h1 class="logo">&copy; 2014 OFF&bullet;PARADISE</h1>
+	        				</div>
+	        			</div>
+	        		</div>
+	        	</footer>
+        		
+	    		</section>
+	    		
 <?php get_footer(); ?>

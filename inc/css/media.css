@@ -1,0 +1,28 @@
+@media (max-width: 767px) {
+	.article .container {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+	
+	.article .description {
+		line-height: 1.3em;
+	}
+	
+	.article .entry-content {
+		-webkit-column-count: 1;
+		-moz-column-count: 1;
+	}
+	
+	.article .entry-meta span {
+		margin-left: 0 !important;
+		float: right;
+	}
+	
+	article footer .text {
+		margin-top: 10px;
+	}
+	
+	.article .entry-title h1 {
+		font-size: 4em;
+	}
+}

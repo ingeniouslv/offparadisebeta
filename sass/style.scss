@@ -1,108 +1,806 @@
+
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html, button, input, select, textarea {
+  color: #222;
+}
+
+body {
+  font-size: 1em;
+  line-height: 1.4;
+}
+
 /*
-Theme Name: _s
-Theme URI: http://underscores.me/
-Author: Automattic
-Author URI: http://automattic.com/
-Description: Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
-Version: 1.0-wpcom
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: _s
-Tags:
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate.
+ * Customize the background color to match your design.
+ */
 
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
+::-moz-selection, ::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
 
- _s is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+/*
+ * A better looking default horizontal rule
+ */
 
-Resetting and rebuilding styles have been helped along thanks to the fine work of
-Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
-along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
-and Blueprint http://www.blueprintcss.org/
-*/
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
 
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-1.0 - Reset
-2.0 - Typography
-3.0 - Elements
-4.0 - Forms
-5.0 - Navigation
-	5.1 - Links
-	5.2 - Menus
-6.0 - Accessibility
-7.0 - Alignments
-8.0 - Clearings
-9.0 - Widgets
-10.0 - Content
-	10.1 - Posts and pages
-	10.2 - Asides
-	10.3 - Comments
-11.0 - Infinite scroll
-12.0 - Media
-	12.1 - Captions
-	12.2 - Galleries
---------------------------------------------------------------*/
-@import "variables-site/variables-site";
-@import "mixins/mixins-master";
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
 
-/*--------------------------------------------------------------
-1.0 - Reset
---------------------------------------------------------------*/
-@import "reset";
+img {
+  vertical-align: middle;
+}
 
-/*--------------------------------------------------------------
-2.0 Typography
---------------------------------------------------------------*/
-@import "typography/typography";
+/*
+ * Remove default fieldset styles.
+ */
 
-/*--------------------------------------------------------------
-3.0 Elements
---------------------------------------------------------------*/
-@import "elements/elements";
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
 
-/*--------------------------------------------------------------
-4.0 Forms
---------------------------------------------------------------*/
-@import "forms/forms";
+/*
+ * Allow only vertical resizing of textareas.
+ */
 
-/*--------------------------------------------------------------
-5.0 Navigation
---------------------------------------------------------------*/
-@import "navigation/navigation";
+textarea {
+  resize: vertical;
+}
 
-/*--------------------------------------------------------------
-6.0 Accessibility
---------------------------------------------------------------*/
-@import "modules/accessibility";
+/* ==========================================================================
+   @font-face
+   ========================================================================== */
 
-/*--------------------------------------------------------------
-7.0 Alignments
---------------------------------------------------------------*/
-@import "modules/alignments";
+@font-face {
+  font-family: 'LeagueGothicRegular';
+  src: url('./inc/fonts/League_Gothic-webfont.eot');
+  src: url('./inc/fonts/League_Gothic-webfont.eot?#iefix') format("embedded-opentype"), url('./inc/fonts/League_Gothic-webfont.woff') format("woff"), url('./inc/fonts/League_Gothic-webfont.ttf') format("truetype"), url('./inc/fonts/League_Gothic-webfont.svg#LeagueGothicRegular') format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 
-/*--------------------------------------------------------------
-8.0 Clearings
---------------------------------------------------------------*/
-@import "modules/clearings";
 
-/*--------------------------------------------------------------
-9.0 Widgets
---------------------------------------------------------------*/
-@import "site/secondary/widgets";
+@font-face {
+  font-family: 'ABChanelCoutureSemibold';
+  src: url('./inc/fonts/abchanelcouture-semibold-webfont.eot');
+  src: url('./inc/fonts/abchanelcouture-semibold-webfont.eot?#iefix') format("embedded-opentype"), url('./inc/fonts/abchanelcouture-semibold-webfont.woff') format("woff"), url('./inc/fonts/abchanelcouture-semibold-webfont.ttf') format("truetype"), url('./inc/fonts/abchanelcouture-semibold-webfont.svg#ABChanelCoutureSemibold') format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 
-/*--------------------------------------------------------------
-10.0 Content
---------------------------------------------------------------*/
-@import "site/site";
 
-/*--------------------------------------------------------------
-11.0 Infinite scroll
---------------------------------------------------------------*/
-@import "modules/infinite-scroll";
+@font-face {
+  font-family: 'ABChanelCoutureRegular';
+  src: url('./inc/fonts/abchanelcouture-regular-webfont.eot');
+  src: url('./inc/fonts/abchanelcouture-regular-webfont.eot?#iefix') format("embedded-opentype"), url('./inc/fonts/abchanelcouture-regular-webfont.woff') format("woff"), url('./inc/fonts/abchanelcouture-regular-webfont.ttf') format("truetype"), url('./inc/fonts/abchanelcouture-regular-webfont.svg#ABChanelCoutureRegular') format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 
-/*--------------------------------------------------------------
-12.0 Media
---------------------------------------------------------------*/
-@import "media/media";
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* header */
+
+header.global {
+  background-color: #fff;
+  color: #111;
+  font-family: Georgia, serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  height: 59px;
+  left: 0;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  zoom: 1;
+  z-index: 99999;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
+  h1 {
+    left: 12px;
+    position: absolute;
+    text-indent: -9999px;
+    font-style: italic;
+    display: block;
+    background: url(./inc/img/logos/header-logo.png) 50% 50% no-repeat;
+    height: 14px;
+    width: 151px;
+    top: 5px;
+  }
+  ul {
+    &.global {
+      float: left;
+      left: 50%;
+      margin: 0 auto;
+      padding: 22px 0 0 0;
+      position: relative;
+      text-align: center;
+      zoom: 1;
+      li {
+        display: block;
+        float: left;
+        left: -50%;
+        line-height: 1.2em;
+        position: relative;
+        padding-left: 10px;
+      }
+    }
+    &.share {
+      position: absolute;
+      right: 12px;
+      top: 0px;
+      li {
+        display: block;
+        float: left;
+        height: 16px;
+        margin-left: 10px;
+        a {
+          color: #444;
+        }
+      }
+    }
+  }
+  nav.visible-phone {
+    position: absolute;
+    top: 7px;
+    right: 15px;
+    select {
+      width: 180px !important;
+    }
+  }
+}
+
+/* mobile header */
+
+/* project header */
+
+.project-header.scale-to-window {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  &:after {
+    padding-top: 46.25%;
+    content: ' ';
+    display: block;
+  }
+}
+
+/* ==========================================================================
+   Carousel
+   ========================================================================== */
+
+.flex-control-nav.flex-control-paging {
+  padding: 0;
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  background-color: #F1F1F1;
+  left: 50%;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Post Styles
+   ========================================================================== */
+
+.page {
+  overflow: hidden;
+  opacity: 1;
+}
+
+.post-slideshow {
+  overflow: hidden;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  .slide img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.post-title {
+  background: #444;
+  padding: 10px;
+  color: #fff;
+  width: 40%;
+  position: absolute;
+  z-index: 9999;
+  right: 0;
+  top: 55%;
+  .title-1 {
+    font-family: PT sans, 'Old Standard TT', georgia;
+    font-weight: 400;
+    letter-spacing: -0.1em;
+    font-size: 16px;
+    margin: 0 15px;
+    line-height: 1em;
+  }
+  .title-2 {
+    font-size: 145%;
+    margin: 0 15px;
+    line-height: 1em;
+  }
+  .date {
+    margin: 0 15px;
+  }
+}
+
+.flex-control-nav.flex-control-paging, .flex-direction-nav {
+  display: none;
+}
+
+.article {
+  margin-top: 0;
+  background: url('./inc/img/bg-white-noise.jpeg');
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
+  .entry-title h1 {
+    font: 5em / 1em "Old Standard TT", "ABChanelCoutureSemibold", sans-serif;
+    font-weight: bold;
+    margin-bottom: 0px;
+    letter-spacing: -0.1em;
+  }
+}
+
+article {
+  z-index: 1;
+  position: relative;
+  padding-bottom: 100px;
+  margin-top: 180px;
+}
+
+.article {
+  .content-sidebar {
+    font-family: 'PT Serif', Georgia, serif;
+    .post-meta {
+      border-top: 2px solid #ccc;
+      border-bottom: 2px solid #ccc;
+      padding: 10px 5px 15px;
+      margin-top: 100px;
+      font-size: 14px;
+    }
+    .social-media-menu ul {
+      margin: 0;
+      padding: 0;
+      li {
+        overflow: hidden;
+        position: relative;
+      }
+    }
+    time {
+      font-style: italic;
+    }
+  }
+  .description {
+    margin-bottom: 0;
+  }
+  .entry-meta {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-bottom: 5px;
+    font-size: 14px !important;
+    p {
+      margin: 0px;
+      color: #8C7C3D;
+      font-size: 10px;
+      text-align: left;
+      font-family: 'PT sans', sans-serif;
+      text-transform: uppercase;
+    }
+  }
+  .entry-content {
+    text-align: justify;
+    text-rendering: optimizeLegibility;
+    -moz-font-feature-settings: "kern=1";
+    -ms-font-feature-settings: "kern" 1;
+    font-family: 'PT Serif', Georgia, serif;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 40px;
+    -moz-column-count: 3;
+    -moz-column-gap: 40px;
+    line-height: 1.5em;
+    font-size: 14px;
+    .lead {
+      margin-top: 0;
+    }
+  }
+  .entry footer {
+    &.author {
+      border-top: 1px solid #444;
+      border-bottom: 1px solid #444;
+      padding: 20px 0;
+      margin-top: 25px;
+    }
+    h4 {
+      font-family: 'PT sans', 'ABChanelCoutureRegular', sans-serif;
+      margin: 0;
+      font-weight: normal;
+      font-size: 24px;
+    }
+    p {
+      &.info {
+        margin: 0 0 25px;
+        font-size: 11px;
+        font-style: italic;
+      }
+      margin-top: 0;
+      font-size: 12px;
+    }
+  }
+}
+
+article .entry footer {
+  h5 {
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+  }
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+#footer {
+  font-family: 'PT sans', sans-serif;
+  .related {
+    background-color: #252525;
+    color: #A4A4A4;
+    padding: 20px 0;
+    h2.title {
+      font-family: PT sans, 'Old Standard TT', georgia;
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: 1em;
+      margin: 0;
+    }
+    .issue-date {
+      margin-top: 5px;
+      text-align: justify;
+      color: white;
+      font-size: 0.7em;
+      display: block;
+    }
+    a span.title {
+      color: #8C7C3D;
+      font-style: italic;
+      font-family: georgia;
+      font-size: 0.7em;
+      font-weight: 400;
+    }
+    span.description {
+      display: block;
+      font-size: 0.7em;
+    }
+  }
+  .copy {
+    padding: 10px 0;
+    background: url('./img/bg-white-noise.jpeg');
+    border-top: 1px solid rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
+    font-size: 12px;
+    h1 {
+      text-indent: -9999px;
+      display: block;
+      background: url(./img/logos/header-logo.png) 50% 50% no-repeat;
+      height: 14px;
+      width: 151px;
+    }
+  }
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px;
+  &:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+  }
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  &.focusable {
+    &:active, &:focus {
+      clip: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      position: static;
+      width: auto;
+    }
+  }
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix {
+  &:before {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
+  }
+  &:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
+    clear: both;
+  }
+  *zoom: 1;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   Theses examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  .project-header.scale-to-window:after {
+    padding-top: 56.25%;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a {
+    text-decoration: underline;
+    &:visited {
+      text-decoration: underline;
+    }
+    &[href]:after {
+      content: " (" attr(href) ")";
+    }
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+   * Don't show links for images, or javascript/internal links
+   */
+  .ir a:after {
+    content: "";
+  }
+  a {
+    &[href^="javascript:"]:after, &[href^="#"]:after {
+      content: "";
+    }
+  }
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */
+  }
+  tr {
+    page-break-inside: avoid;
+  }
+  img {
+    page-break-inside: avoid;
+    max-width: 100% !important;
+  }
+  @page {
+    margin: 0.5cm;
+  }
+
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2, h3 {
+    page-break-after: avoid;
+  }
+}
+
+/* ===========================================================
+ *
+ *  Name:          selectordie.css
+ *  Updated:       2014-04-27
+ *  Created by:    Per V @ Vst.mn
+ *  What?:         Base CSS for Select or Die
+ *
+ *  Copyright (c) 2014 Per Vestman
+ *  Dual licensed under the MIT and GPL licenses.
+ *
+ *  No, I don't usually comment my CSS, but in this
+ *  case it might "help" someone.
+ *
+ *  Beards, Rock & Loud Guns | Cogs 'n Kegs
+ * =========================================================== */
+
+/* Remove, change to fit your needs */
+@import url(http://fonts.googleapis.com/css?family=Lato:300,700);
+
+.sod_select {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+  display: inline-block;
+  position: relative;
+  line-height: 1;
+  width: 200px;
+  padding: 15px 10px;
+  border: 3px solid #5e5e5e;
+  background: #ffffff;
+  color: #444444;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+  outline: 0;
+  outline-offset: -2px;
+  /* Opera */
+  cursor: default;
+  &:before {
+    content: "\25B2";
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    font-size: 7px;
+  }
+  &:after {
+    content: "\25B2";
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    font-size: 7px;
+    content: "\25BC";
+    top: auto;
+    bottom: 12px;
+  }
+  &:hover, &.open, &.focus {
+    border-color: #000000;
+  }
+  &.open {
+    color: #919191;
+  }
+  &.focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  &.disabled {
+    border-color: #828282;
+    color: #b2b2b2;
+    cursor: not-allowed;
+  }
+  .sod_label {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 15px;
+  }
+  .sod_prefix {
+    /* Use this if you're using a prefix and want to style it */
+  }
+  .sod_placeholder {
+    /* Use this if you're using a placeholder and want to style it */
+  }
+  .sod_list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    height: auto;
+    width: 200px;
+    margin: 0 0 0 -3px;
+    background: #ffffff;
+    border: 3px solid #000000;
+    border-top: none;
+    color: #444444;
+    font-weight: 300;
+    z-index: 1;
+  }
+  &.open .sod_list {
+    display: block;
+  }
+  &.disabled.open .sod_list {
+    display: none;
+  }
+  &.above .sod_list {
+    top: auto;
+    bottom: 100%;
+    border-top: 3px solid #000000;
+    border-bottom: none;
+  }
+  .sod_list {
+    ul {
+      overflow-y: auto;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      position: relative;
+      padding: 10px 10px;
+      list-style-type: none;
+    }
+    .optgroup {
+      background: inherit;
+      color: #939393;
+      font-size: 10px;
+      font-style: italic;
+      &.disabled {
+        background: inherit;
+        color: #939393;
+        font-size: 10px;
+        font-style: italic;
+      }
+    }
+    .groupchild {
+      padding-left: 20px;
+    }
+    .disabled {
+      background: inherit;
+      color: #cccccc;
+    }
+    .active {
+      background: #f7f7f7;
+      color: #333333;
+    }
+    .selected {
+      font-weight: 700;
+      padding-right: 25px;
+      &:before {
+        content: "";
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        display: inline-block;
+        color: #808080;
+        height: 9px;
+        width: 10px;
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMTAgOSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTAgOSIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8cGF0aCBmaWxsPSIjRDlEOUQ4IiBkPSJNNCw2LjdDMy42LDYuMywzLjUsNi4xLDMuMSw1LjdDMi42LDUuMiwyLDQuNiwxLjUsNC4xYy0wLjgtMC44LTIsMC40LTEuMiwxLjJjMC45LDAuOSwxLjksMS45LDIuOCwyLjgNCgkJYzAuNywwLjcsMS4zLDEsMiwwQzYuNyw2LDguMywzLjcsOS44LDEuNUMxMC41LDAuNSw5LTAuMyw4LjMsMC42bDAsMEM2LjcsMi45LDUuNyw0LjQsNCw2LjciLz4NCjwvZz4NCjwvc3ZnPg0K);
+      }
+    }
+  }
+  &.no_highlight .sod_list .selected {
+    font-weight: 300;
+    &:before {
+      display: none;
+    }
+  }
+  .sod_list {
+    .link {
+      /* If data-link is set on a specific option */
+    }
+    .linkexternal {
+      /* If data-link-external is set on a specific option */
+    }
+  }
+  select {
+    display: none !important;
+  }
+  &.touch select {
+    -webkit-appearance: menulist-button;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block !important;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    z-index: 1;
+  }
+}

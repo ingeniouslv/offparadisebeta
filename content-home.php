@@ -2,6 +2,7 @@
 				query_posts( $query_string . '&posts_per_page=1' );			
 				while ( have_posts() ) : the_post();  
 			?>
+	        		<?php if( get_post_format() != 'audio' ): ?>
 	        		<div class="project-header scale-to-window">
 	        			<div class="post-title hidden-phone banner">
 	        				<div class="social-icons"></div>
@@ -17,6 +18,13 @@
 	        			<?php get_template_part( 'loop', get_post_format() ); ?>
 	        			
 	        		</div>
+	        		<?php else: ?>
+	        		<div class="audio-header scale-to-window">
+	        			
+	        			<?php get_template_part( 'loop', get_post_format() ); ?>
+	        			
+	        		</div>
+        			<?php endif; ?>
 	        		
 	        <?php endwhile; ?>
 

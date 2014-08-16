@@ -82,6 +82,10 @@ time.updated {
 	display: none;
 }
 
+body {
+	margin-top: 59px;
+}
+
 /* ==========================================================================
    Chrome Frame prompt
    ========================================================================== */
@@ -267,6 +271,10 @@ header.global nav.visible-phone select {
 	opacity: 0.3;
 }
 
+.story-header .audio-wrapper iframe {
+	width: 100%;
+}
+
 .post-title .title-1 {
 	font-family: PT sans, 'Old Standard TT', georgia;
 	font-weight: 400;
@@ -390,6 +398,7 @@ margin-top: 25px;
 	margin: 0;
 	font-weight: normal;
 	font-size: 24px;
+	text-transform: uppercase;
 }
 
 .article .entry footer p.info {

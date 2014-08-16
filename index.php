@@ -68,7 +68,7 @@ get_header(); ?>
 			        			
 			        			<footer class="row-fluid author">
 			        				<figure class="span5">
-			        					<img src="<?php bloginfo('template_directory'); ?>/inc/img/profiles/profile_neek.jpg" />
+			        					<img src="<?php echo get_avatar_url( get_avatar( get_the_author_meta( 'ID' ), 512 ) ); ?>" />
 			        				</figure>
 			        				
 			        				<div class="span7 text">

@@ -62,7 +62,7 @@ function _s_setup() {
 	 * See http://codex.wordpress.org/Post_Formats
 	 */
 	add_theme_support( 'post-formats', array(
-		'video', 'quote', 'link', 'gallery', 'image'
+		'video', 'gallery', 'image', 'audio'
 	) );
 
 	// Setup the WordPress core custom background feature.
@@ -73,6 +73,43 @@ function _s_setup() {
 }
 endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );
+
+
+/**
+ * Adds Custom User Meta data to user profiles
+ *
+ * @param array $classes Classes for the body element.
+ * @return array
+ */
+function seven_contact_methods( $contactmethods ) {
+	// remove what we don't want
+    unset( $contactmethods[ 'aim' ] );
+    unset( $contactmethods[ 'yim' ] );
+    unset( $contactmethods[ 'jabber' ] );
+    
+    // add something useful
+    $contactmethods[ 'position' ] = 'Position';
+    $contactmethods[ 'twitter' ] = 'Twitter Username';
+    $contactmethods[ 'instagram' ] = 'Instagram Username';
+    $contactmethods[ 'facebook' ] = 'Facebook Profile URL';
+    $contactmethods[ 'linkedin' ] = 'LinkedIn Public Profile URL';
+    $contactmethods[ 'googleplus' ] = 'Google+ Profile URL';
+    
+    return $contactmethods;
+}
+
+
+/**
+ * Returns the user avatar's url instead of img tag
+ *
+ */
+add_filter( 'user_contactmethods', 'seven_contact_methods' ); 
+
+function get_avatar_url($get_avatar){
+    preg_match("/src='(.*?)'/i", $get_avatar, $matches);
+    return $matches[1];
+}
+
 
 /**
  * Register widget area.
@@ -98,6 +135,7 @@ add_action( 'widgets_init', '_s_widgets_init' );
 function op_scripts() {
 	wp_enqueue_style( 'op-bootstrapcss', get_template_directory_uri() . '/inc/css/bootstrap.css' );
 	wp_enqueue_style( 'op-normalize', get_template_directory_uri() . '/inc/css/normalize.css' );
+	wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' );
 	wp_enqueue_style( 'op-mediacss', 'http://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Old+Standard+TT:700,400' );
 	wp_enqueue_style( 'op-maincss', get_template_directory_uri() . '/inc/css/main.css' );
 	wp_enqueue_style( 'op-mediacss', get_template_directory_uri() . '/inc/css/media.css' );

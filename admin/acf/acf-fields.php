@@ -106,6 +106,39 @@ if(function_exists("register_field_group")){
 		),
 		'menu_order' => 0,
 	));
+	register_field_group(array (
+		'id' => 'acf_format-audio',
+		'title' => 'Format Audio',
+		'fields' => array (
+			array (
+				'key' => 'field_56',
+				'label' => 'Add Audio',
+				'name' => 'add_audio_url',
+				'type' => 'text',
+				'instructions' => 'Paste audio page URL',
+				'default_value' => '',
+				'formatting' => 'html',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_format',
+					'operator' => '==',
+					'value' => 'audio',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
 }
 
 /* Add-Ons */

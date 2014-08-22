@@ -1,7 +1,7 @@
 			<?php		
 			?>
 	        		<?php if( get_post_format() != 'audio' ): ?>
-	        		<div class="project-header scale-to-window">
+	        		<div class="project-header scale-to-window <?php echo get_post_format(); ?>">
 	        			<div class="post-title hidden-phone banner">
 	        				<div class="social-icons"></div>
 	        				

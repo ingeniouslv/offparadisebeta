@@ -214,10 +214,13 @@ header.global nav.visible-phone select {
 .project-header.scale-to-window {
 	width: 100%;
 	display: inline-block;
+	height: auto !important;
+	margin: 0;
+	padding: 0;
 	position: relative;
 }
 .project-header.scale-to-window.gallery:after {
-	padding-top: 46.25%;
+	padding-top: 56.25%;
 	content: ' ';
 	display: block;
 }

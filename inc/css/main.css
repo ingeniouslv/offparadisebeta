@@ -216,7 +216,7 @@ header.global nav.visible-phone select {
 	display: inline-block;
 	position: relative;
 }
-.project-header.scale-to-window:after {
+.project-header.scale-to-window.gallery:after {
 	padding-top: 46.25%;
 	content: ' ';
 	display: block;
@@ -589,7 +589,7 @@ article .entry footer ul {
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
-    .project-header.scale-to-window:after {
+    .gallery.project-header.scale-to-window:after {
 		padding-top: 56.25%;
 	}
 }

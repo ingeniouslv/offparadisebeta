@@ -66,6 +66,8 @@
 			$('.video-wrapper').fitVids();
 		}
 		
+		relatedArticles();
+		
 		$("select").selectOrDie();
 	});
 	
@@ -114,4 +116,18 @@
 	*/
 		}	
 	});
+	
+	function relatedArticles() {
+		url = 'http://op.wendoh.dev/api/get_recent_posts/?orderby=rand';
+		
+		$.getJSON( url, function(data) {
+			
+			$.each(data.posts, function( i, post ) {
+				$('#opRecent').append('<div class="span2"> <a href="'+post.url+'"> <div class="overlay"></div> <img src="'+post.thumbnail+'" class="img-responsive" width="100%"> </a> <time class="issue-date" datetime="'+post.date+'" pubdate>'+post.date+'</time> <a href="'+post.url+'"> <span class="title">'+post.title_plain+'</span> </a> <span class="description">'+post.excerpt+'</span> </div>');
+			});
+			
+		});
+	}
 })(jQuery);	
+
+

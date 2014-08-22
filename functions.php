@@ -56,6 +56,12 @@ function _s_setup() {
 	add_theme_support( 'html5', array(
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
 	) );
+	
+	/*
+	 * Enable support for Post Thumbnails
+	 * See http://codex.wordpress.org/Post_Thumbnails
+	 */
+	 add_theme_support( 'post-thumbnails' ); 
 
 	/*
 	 * Enable support for Post Formats.

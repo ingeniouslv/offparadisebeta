@@ -3,7 +3,7 @@
 				while ( have_posts() ) : the_post();  
 			?>
 	        		<?php if( get_post_format() != 'audio' ): ?>
-	        		<div class="project-header scale-to-window">
+	        		<div class="project-header scale-to-window <?php echo get_post_format(); ?>">
 	        			<div class="post-title hidden-phone banner">
 	        				<div class="social-icons"></div>
 	        				
@@ -21,7 +21,7 @@
 	        		<?php else: ?>
 	        		<div class="audio-header scale-to-window">
 	        			
-	        			<?php get_template_part( 'loop', get_post_format() ); ?>
+	        			<?php get_template_part( 'loop', 'audio' ); ?>
 	        			
 	        		</div>
         			<?php endif; ?>

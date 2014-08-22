@@ -1,62 +1,30 @@
-<?php
-/**
- * @package _s
- */
-?>
+			<?php
+				query_posts( $query_string . '&posts_per_page=1' );			
+				while ( have_posts() ) : the_post();  
+			?>
+	        		<?php if( get_post_format() != 'audio' ): ?>
+	        		<div class="project-header scale-to-window">
+	        			<div class="post-title hidden-phone banner">
+	        				<div class="social-icons"></div>
+	        				
+	        				<div class="title-meta">
+	        					<h2 class="title-1">OFF⋅PARADISE</h2>
+	        					<?php the_title( '<h3 class="title-2">', '</h3>' ); ?>
+	        					<time class="date"><?php _s_posted_on(); ?></time>
+	        					<figure class="author"></figure>
+	        				</div>
+	        			</div>
+	        			
+	        			<?php get_template_part( 'loop', get_post_format() ); ?>
+	        			
+	        		</div>
+	        		<?php else: ?>
+	        		<div class="audio-header scale-to-window">
+	        			
+	        			<?php get_template_part( 'loop', 'audio' ); ?>
+	        			
+	        		</div>
+        			<?php endif; ?>
+	        		
+	        <?php endwhile; ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
-		<div class="entry-meta">
-			<?php _s_posted_on(); ?>
-		</div><!-- .entry-meta -->
-	</header><!-- .entry-header -->
-
-	<div class="entry-content">
-		<?php the_content(); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', '_s' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php
-			/* translators: used between list items, there is a space after the comma */
-			$category_list = get_the_category_list( __( ', ', '_s' ) );
-
-			/* translators: used between list items, there is a space after the comma */
-			$tag_list = get_the_tag_list( '', __( ', ', '_s' ) );
-
-			if ( ! _s_categorized_blog() ) {
-				// This blog only has 1 category so we just need to worry about tags in the meta text
-				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', '_s' );
-				} else {
-					$meta_text = __( 'Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', '_s' );
-				}
-
-			} else {
-				// But this blog has loads of categories so we should probably display them here
-				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', '_s' );
-				} else {
-					$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', '_s' );
-				}
-
-			} // end check for categories on this blog
-
-			printf(
-				$meta_text,
-				$category_list,
-				$tag_list,
-				get_permalink()
-			);
-		?>
-
-		<?php edit_post_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' ); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->

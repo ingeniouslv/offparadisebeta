@@ -5,7 +5,7 @@
 						
 					endif; 
 				?>
-						<div class="post-slideshow slide-scale video-wrapper">
+						<div class="slide-scale video-wrapper">
     					<?php if( $video_embed ): ?>
 	        				<?php echo $video_embed ?>
 		        		<?php endif; ?>	

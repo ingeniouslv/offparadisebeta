@@ -38,7 +38,7 @@
         <div id="content" class="index hidden-while-loading">
         
         	<header class="global">
-        		<h1>OFF⋅PARADISE</h1>
+        		<a href="<?php bloginfo('url'); ?>"><h1>OFF⋅PARADISE</h1></a>
         		<nav class="hidden-phone">
         			<ul class="global">
         				<li class="archive">Previously</li>

@@ -93,92 +93,19 @@ get_header(); ?>
 	        	
 	        	<footer id="footer" class="hidden-phone">
 	        		<div class="container-fulid">
-<!--
 	        			<div class="row-fluid related">
 	        				<div class="container">
 		        				<h2 class="title">Previously OFF⋅PARADISE</h2>
-		        				<div class="row-fluid">
+		        				<div id="opRecent" class="row-fluid">
 		        				
-		        					<div class="span2">
-			        					<a href="#">
-			        						<div class="overlay"></div>
-			        						<img src="img/barnaby-roper-fashion-film.jpeg" width="100%">
-			        					</a>
-			        					<time class="issue-date" datetime="2012-21-12 12:12:12-0400" pubdate>Friday, December 21, 2012</time>
-			        					<a href="#">
-			        						<span class="title">Georgia May Jagger for Hudson</span>
-			        					</a>
-			        					<span class="description">The Model of the Moment Designs a Retro-Inspired Denim Collection</span>
-			        				</div>
-		        				
-		        					<div class="span2">
-			        					<a href="#">
-			        						<div class="overlay"></div>
-			        						<img src="img/victoire-de-castellanes-jewelry-show.jpeg" width="100%">
-			        					</a>
-			        					<time class="issue-date" datetime="2012-21-12 12:12:12-0400" pubdate>Friday, December 21, 2012</time>
-			        					<a href="#">
-			        						<span class="title">Georgia May Jagger for Hudson</span>
-			        					</a>
-			        					<span class="description">The Model of the Moment Designs a Retro-Inspired Denim Collection</span>
-			        				</div>
-		        				
-		        					<div class="span2">
-			        					<a href="#">
-			        						<div class="overlay"></div>
-			        						<img src="img/georgia-may-jagger-for-hudson.jpeg" width="100%">
-			        					</a>
-			        					<time class="issue-date" datetime="2012-21-12 12:12:12-0400" pubdate>Friday, December 21, 2012</time>
-			        					<a href="#">
-			        						<span class="title">Georgia May Jagger for Hudson</span>
-			        					</a>
-			        					<span class="description">The Model of the Moment Designs a Retro-Inspired Denim Collection</span>
-			        				</div>
-		        				
-		        					<div class="span2">
-			        					<a href="#">
-			        						<div class="overlay"></div>
-			        						<img src="img/victoire-de-castellanes-jewelry-show.jpeg" width="100%">
-			        					</a>
-			        					<time class="issue-date" datetime="2012-21-12 12:12:12-0400" pubdate>Friday, December 21, 2012</time>
-			        					<a href="#">
-			        						<span class="title">Georgia May Jagger for Hudson</span>
-			        					</a>
-			        					<span class="description">The Model of the Moment Designs a Retro-Inspired Denim Collection</span>
-			        				</div>
-		        				
-		        					<div class="span2">
-			        					<a href="#">
-			        						<div class="overlay"></div>
-			        						<img src="img/contributor.jpeg" width="100%">
-			        					</a>
-			        					<time class="issue-date" datetime="2012-21-12 12:12:12-0400" pubdate>Friday, December 21, 2012</time>
-			        					<a href="#">
-			        						<span class="title">Georgia May Jagger for Hudson</span>
-			        					</a>
-			        					<span class="description">The Model of the Moment Designs a Retro-Inspired Denim Collection</span>
-			        				</div>
-		        				
-		        					<div class="span2">
-			        					<a href="#">
-			        						<div class="overlay"></div>
-			        						<img src="img/barnaby-roper-fashion-film.jpeg" width="100%">
-			        					</a>
-			        					<time class="issue-date" datetime="2012-21-12 12:12:12-0400" pubdate>Friday, December 21, 2012</time>
-			        					<a href="#">
-			        						<span class="title">Georgia May Jagger for Hudson</span>
-			        					</a>
-			        					<span class="description">The Model of the Moment Designs a Retro-Inspired Denim Collection</span>
-			        				</div>
 			        				
 		        				</div>
 	        				</div>
 	        			</div>
--->
 	        			
 	        			<div class="row-fluid copy">
 	        				<div class="container">
-		        				<h1 class="logo">&copy; 2014 OFF&bullet;PARADISE</h1>
+		        				<a href="<?php bloginfo('url'); ?>"><h1 class="logo">&copy; 2014 OFF&bullet;PARADISE</h1></a>
 	        				</div>
 	        			</div>
 	        		</div>

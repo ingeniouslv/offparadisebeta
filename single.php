@@ -21,7 +21,7 @@ get_header(); ?>
         		
 		<?php 
 			/* get_template_part( 'content', get_post_format() ); */
-			if ( is_home() ) :
+			if ( is_single() ) :
 				query_posts( $query_string . '&posts_per_page=1' );			
 				while ( have_posts() ) : the_post(); 
 		?>

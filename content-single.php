@@ -1,6 +1,4 @@
-			<?php
-				query_posts( $query_string . '&posts_per_page=1' );			
-				while ( have_posts() ) : the_post();  
+			<?php		
 			?>
 	        		<?php if( get_post_format() != 'audio' ): ?>
 	        		<div class="project-header scale-to-window">
@@ -25,6 +23,4 @@
 	        			
 	        		</div>
         			<?php endif; ?>
-	        		
-	        <?php endwhile; ?>
 

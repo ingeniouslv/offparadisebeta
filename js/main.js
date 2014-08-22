@@ -118,7 +118,7 @@
 	});
 	
 	function relatedArticles() {
-		url = 'http://op.wendoh.dev/api/get_recent_posts/?orderby=rand';
+		url = 'http://control.off-paradise.com/api/get_recent_posts/?orderby=rand';
 		
 		$.getJSON( url, function(data) {
 			

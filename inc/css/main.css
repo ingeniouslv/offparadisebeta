@@ -169,7 +169,7 @@ header.global.navbar-hide {
 	top: -50px;
 }
 
-.admin-bar header.global {
+.admin-bar header.global.navbar-hide  {
 	top: -19px;
 }
 

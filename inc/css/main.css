@@ -161,8 +161,16 @@ header.global {
 	-webkit-transition: all 0.3s ease-out;
 }
 
+.admin-bar header.global {
+	top: 31px;
+}
+
 header.global.navbar-hide {
 	top: -50px;
+}
+
+.admin-bar header.global {
+	top: -19px;
 }
 
 header.global h1 {

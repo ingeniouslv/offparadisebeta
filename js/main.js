@@ -69,6 +69,8 @@
 		relatedArticles();
 		
 		$("select").selectOrDie();
+		
+		hideNav();
 	});
 	
 	$(window).resize(function(){
@@ -115,6 +117,7 @@
 			console.log(dHeight);
 	*/
 		}	
+		
 	});
 	
 	function relatedArticles() {
@@ -128,6 +131,29 @@
 			
 		});
 	}
+	
+	function hideNav() {
+	
+		if ($(window).width() >= 768) {
+			var lastScrollTop = 0;
+			$(window).scroll(function(event){
+				var st = $(this).scrollTop();
+	
+				if (st > lastScrollTop && st > 60){
+					$('header.global').addClass('navbar-hide');
+				} else {
+					$('header.global').removeClass('navbar-hide');
+				}
+	
+				lastScrollTop = st;
+			});
+	
+			$('header.global').hover(function() {
+				$(this).removeClass('navbar-hide');
+			});
+		}
+	}
+	
 })(jQuery);	
 
 

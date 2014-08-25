@@ -36,25 +36,7 @@ get_header(); ?>
 	        		<div class="container">
 	        			<div class="row-fluid">
 	        			
-	        				<div class="content-sidebar span3 hidden-phone">
-	        					<section class="post-meta" data-offset-top="0">
-		        					<div class="post-meta-info">
-				        				
-				        				<p class="byline author vcard">
-				        					By <span class="fn"><?php the_author(); ?></span>
-				        				</p>
-		        					</div>
-		        					<aside class="social-media-menu">
-		        						<ul class="unstyled">
-				        					<li class="first">Twitter</li>
-				        					<li>Facebook</li>
-				        					<li>Instagram</li>
-		        						</ul>
-		        					</aside>
-	        					</section>
-	        				</div>
-	        			
-	        				<div class="span9 entry">
+	        				<div class="span10 offset1 entry">
 			        			<header class="entry-title">
 			        				<h1><?php the_title(); ?></h1>
 			        				<h3 class="description"><?php the_excerpt(); ?></h3>

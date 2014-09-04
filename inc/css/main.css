@@ -325,8 +325,11 @@ header.global nav.visible-phone select {
 	z-index: 9999;
 	right: 0;
 	top: 55%;	
-}
+} 
 
+.story-header {
+	background: #222
+}
 .story-header:hover .post-title {
 	opacity: 0.3;
 }
@@ -359,6 +362,18 @@ header.global nav.visible-phone select {
 }
 
 .flex-control-nav.flex-control-paging, .flex-direction-nav { display: none; }
+
+@media screen and (device-aspect-ratio: 16/9) {
+	.cover.slide.fade {
+		height: calc(100%);
+		text-align: center;
+	}
+	.post-slideshow .slide img {
+		height: 100%;
+		width: auto;
+		margin: auto;
+	}
+}
 
 .article { 
 	margin-top: 0; 

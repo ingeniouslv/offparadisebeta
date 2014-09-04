@@ -108,8 +108,8 @@
 				mHeight = wHeight;
 			}
 			vScroll = $(window).scrollTop()/3;
-			$('#slideshow').css("-webkit-transform", "translateY(-" + vScroll + "px)");
-			$('#slideshow').css("-moz-transform", "translateY(-" + vScroll + "px)");
+			$('#slideshow').css("-webkit-transform", "translateY(" + vScroll + "px)");
+			$('#slideshow').css("-moz-transform", "translateY(" + vScroll + "px)");
 			console.log(vScroll);
 		
 	/*

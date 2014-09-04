@@ -52,14 +52,16 @@
 		
 		/* $("header.global").sticky({ topSpacing: 0, className: 'sticky' }); */
 		
-		/* Carousel
-		-------------------------------------------- */
-		$('#slideshow').flexslider({
-			animation	: "fade",
-			maxItems	: 1,
-			move		: 1,
-			selector	: ".slide",
-			keyboard	: true
+		$(window).load(function() {
+			/* Carousel
+			-------------------------------------------- */
+			$('#slideshow').flexslider({
+				animation	: "fade",
+				maxItems	: 1,
+				move		: 1,
+				selector	: ".slide",
+				keyboard	: true
+			});
 		});
 		
 		if( $('.video-wrapper')[0] ) {

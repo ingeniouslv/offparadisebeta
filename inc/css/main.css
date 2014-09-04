@@ -363,7 +363,7 @@ header.global nav.visible-phone select {
 
 .flex-control-nav.flex-control-paging, .flex-direction-nav { display: none; }
 
-@media screen and (max-aspect-ratio: 16/9) {
+@media screen and (min-aspect-ratio: 16/9) {
 	.cover.slide.fade {
 		height: calc(100%);
 		text-align: center;

@@ -123,7 +123,7 @@
 	});
 	
 	function relatedArticles() {
-		url = 'http://control.off-paradise.com/api/get_recent_posts/?orderby=rand';
+		url = 'http://control.off-paradise.com/api/get_recent_posts/?orderby=rand&count=6';
 		
 		$.getJSON( url, function(data) {
 			

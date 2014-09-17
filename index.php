@@ -40,7 +40,7 @@ get_header(); ?>
 			        			<header class="entry-title">
 			        				<h1><?php the_title(); ?></h1>
 			        				<h3 class="description"><?php the_excerpt(); ?></h3>
-			        				<div class="entry-meta"><p>Words by <?php the_author(); ?><span style="margin-left: 242px">Photography: <?php the_author(); ?></span></p>
+			        				<div class="entry-meta"><p class="text-center">Words by <?php the_author(); ?></p>
 </div>
 			        			</header>
 			        			
@@ -49,20 +49,24 @@ get_header(); ?>
 			        			</section>
 			        			
 			        			<footer class="row-fluid author">
-			        				<figure class="span5">
+			        				<figure class="span2">
 			        					<img src="<?php echo get_avatar_url( get_avatar( get_the_author_meta( 'ID' ), 512 ) ); ?>" />
 			        				</figure>
 			        				
-			        				<div class="span7 text">
+			        				<div class="span8 text">
 				        				<h4><?php the_author(); ?></h4>
 				        				<p class="info"><?php echo get_the_author_meta('user_url'); ?> - #OffParadise - <?php echo get_the_author_meta('twitter'); ?></p>
 				        				<p><?php echo get_the_author_meta('description'); ?></p>
-				        				<h5>Follow <?php the_author(); ?></h5>
+			        				</div>
+			        				
+			        				<div class="span2">
+				        				<h5 style="margin-top:0;">Follow</h5>
 				        				<ul class="unstyled">
-				        					<li>Twitter: @<?php echo get_the_author_meta('twitter'); ?></li>
-				        					<li>Instagram: @<?php echo get_the_author_meta('twitter'); ?></li>
+				        					<li><a href="http://twitter.com/<?php echo get_the_author_meta('twitter'); ?>"><i class="fa fa-twitter"></i> @<?php echo get_the_author_meta('twitter'); ?></a></li>
+				        					<li><a href="http://instagram.com/<?php echo get_the_author_meta('instagram'); ?>"><i class="fa fa-instagram"></i> @<?php echo get_the_author_meta('instagram'); ?></a></li>
 				        				</ul>
 			        				</div>
+			        				
 			        			</footer>
 			        			
 		        			</div>

@@ -94,6 +94,82 @@ textarea {
 }
 
 
+
+/* body text */
+
+@font-face {
+  font-family: 'FreightText';
+  src: url('./inc/fonts/FreigTexProBold.eot'); /* IE9 Compat Modes */
+  src: url('./inc/fonts/FreigTexProBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./inc/fonts/FreigTexProBold.woff') format('woff'), /* Modern Browsers */
+       url('./inc/fonts/FreigTexProBold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('./inc/fonts/FreigTexProBold.svg#2d47676828a72ef468efe3a042ec24f6') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'FreightText';
+  src: url('./inc/fonts/FreigTexProBoldIt.eot'); /* IE9 Compat Modes */
+  src: url('./inc/fonts/FreigTexProBoldIt.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./inc/fonts/FreigTexProBoldIt.woff') format('woff'), /* Modern Browsers */
+       url('./inc/fonts/FreigTexProBoldIt.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('./inc/fonts/FreigTexProBoldIt.svg#0981c7e4aac694eacf79da99cdbcab05') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  700;
+}
+
+@font-face {
+  font-family: 'FreightText';
+  src: url('./inc/fonts/FreigTexProBook.eot'); /* IE9 Compat Modes */
+  src: url('./inc/fonts/FreigTexProBook.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./inc/fonts/FreigTexProBook.woff') format('woff'), /* Modern Browsers */
+       url('./inc/fonts/FreigTexProBook.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('./inc/fonts/FreigTexProBook.svg#567fec1ea62e7808c5a092cb9f4bb8eb') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'FreightText';
+  src: url('./inc/fonts/FreigTexProBookIt.eot'); /* IE9 Compat Modes */
+  src: url('./inc/fonts/FreigTexProBookIt.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./inc/fonts/FreigTexProBookIt.woff') format('woff'), /* Modern Browsers */
+       url('./inc/fonts/FreigTexProBookIt.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('./inc/fonts/FreigTexProBookIt.svg#c8da8fd957572b328fb29fbc2fd39e49') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'FreightText';
+  src: url('./inc/fonts/FreigTexProLig.eot'); /* IE9 Compat Modes */
+  src: url('./inc/fonts/FreigTexProLig.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./inc/fonts/FreigTexProLig.woff') format('woff'), /* Modern Browsers */
+       url('./inc/fonts/FreigTexProLig.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('./inc/fonts/FreigTexProLig.svg#a2ecad1941d119bdbf6f75a3306b3167') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  200;
+}
+
+@font-face {
+  font-family: 'FreightText';
+  src: url('./inc/fonts/FreigTexProLigIt.eot'); /* IE9 Compat Modes */
+  src: url('./inc/fonts/FreigTexProLigIt.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./inc/fonts/FreigTexProLigIt.woff') format('woff'), /* Modern Browsers */
+       url('./inc/fonts/FreigTexProLigIt.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('./inc/fonts/FreigTexProLigIt.svg#1c770646f0c46913528b728bf2122316') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  200;
+}
+
+
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
@@ -272,7 +348,7 @@ article {
 
 .article {
   .content-sidebar {
-    font-family: 'PT Serif', Georgia, serif;
+    font-family: 'FreightText', Georgia, serif;
     .post-meta {
       border-top: 2px solid #ccc;
       border-bottom: 2px solid #ccc;
@@ -316,7 +392,7 @@ article {
     text-rendering: optimizeLegibility;
     -moz-font-feature-settings: "kern=1";
     -ms-font-feature-settings: "kern" 1;
-    font-family: 'PT Serif', Georgia, serif;
+    font-family: 'FreightText', Georgia, serif;
     -webkit-column-count: 3;
     -webkit-column-gap: 40px;
     -moz-column-count: 3;

@@ -182,3 +182,38 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+/*********************
+RANDOM CLEANUP ITEMS
+*********************/
+
+// remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
+function filter_ptags_on_images($content){
+   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+}
+
+// This removes the annoying […] to a Read More link
+function excerpt_more($more) {
+	global $post;
+	// edit here if you like
+	return '...  <a href="'. get_permalink($post->ID) . '" title="Read '.get_the_title($post->ID).'">Read more &raquo;</a>';
+}
+
+/*
+ * This is a modified the_author_posts_link() which just returns the link.
+ *
+ * This is necessary to allow usage of the usual l10n process with printf().
+ */
+function op_get_the_author_posts_link() {
+	global $authordata;
+	if ( !is_object( $authordata ) )
+		return false;
+	$link = sprintf(
+		'<a href="%1$s" title="%2$s" rel="author">%3$s</a>',
+		get_author_posts_url( $authordata->ID, $authordata->user_nicename ),
+		esc_attr( sprintf( __( 'Posts by %s' ), get_the_author() ) ), // No further l10n needed, core will take care of this one
+		get_the_author()
+	);
+	return $link;
+}

@@ -605,6 +605,23 @@ article .entry footer ul {
 	}
 }
 
+/* ==========================================================================
+ * CAPTION STYLES
+ * ========================================================================== */
+.aligncenter {
+	margin: auto;
+	text-align: center;
+}
+
+.wp-caption .wp-caption-text {
+	font-style: italic;
+	font-size: 16px;
+	line-height: 1.5;
+	color: rgba(0,0,0,0.8);
+	outline: none;
+	margin: 0.5rem 0;
+} 
+
 
 /* ==========================================================================
    Footer

@@ -416,6 +416,7 @@ header.global nav.visible-phone select {
 
 .story-header .audio-wrapper iframe {
 	width: 100%;
+	height: auto;
 }
 
 .post-title .title-1 {

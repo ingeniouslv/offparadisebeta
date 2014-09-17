@@ -5,7 +5,7 @@
 						
 					endif; 
 				?>
-						<div class="slide-scale video-wrapper audio-wrapper">
+						<div class="slide-scale audio-wrapper">
     					<?php if( $audio_embed ): ?>
 	        				<?php echo $audio_embed ?>
 		        		<?php endif; ?>	

@@ -559,6 +559,21 @@ article {
 	margin: 0 auto 1rem;
 }
 
+.entry-content .gallery-size-thumbnail {
+	position: relative;
+	clear: both;
+	float: left;
+}
+
+.entry-content .gallery-size-thumbnail .gallery-item {
+	float: left;
+	margin: 2.859%;
+}
+
+.entry-content .gallery-size-thumbnail .gallery-item .wp-caption-text {
+	direction: none;
+}
+
 .article .entry footer.author {
 border-top: 1px solid #444;
 border-bottom: 1px solid #444;

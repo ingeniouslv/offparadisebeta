@@ -568,6 +568,7 @@ article {
 .entry-content .gallery-size-thumbnail .gallery-item {
 	float: left;
 	margin: 2.859%;
+	width: 19%;
 }
 
 .entry-content .gallery-size-thumbnail .gallery-item .wp-caption-text {

@@ -35,6 +35,7 @@
 	$(document).ready(function(){
 		wHeight = $(window).height();
 		wWidth = $(window).width();
+		mHeight = wWidth * 0.81803399;
 		
 		if(wWidth > wHeight) {
 			$('#content').css('min-height', wHeight);
@@ -46,7 +47,7 @@
 			$('#content').css('min-width', wWidth);
 			$('.post-slideshow').css({
 				width: wWidth,
-				height: (wWidth/1.61803398875)
+				height: mHeight
 			});
 		}
 		

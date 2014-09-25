@@ -84,7 +84,7 @@
 		if(wWidth > wHeight) {
 			$('#content').css('min-height', wHeight);
 			$('.post-slideshow').css({ 
-				height: wHeight,
+				height: mHeight,
 				width: wWidth
 			});
 		} else {

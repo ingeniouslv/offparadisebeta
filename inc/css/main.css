@@ -322,6 +322,11 @@ header.global nav.visible-phone select {
 	content: ' ';
 	display: block;
 }
+.project-header.scale-to-window .cover-image {
+	background-attachment: fixed;
+	background-size: cover;
+	padding-top: 46.8%;
+}
 @media screen and (min-height: 630px) and (min-width: 894px) {
 	.project-header.scale-to-window.video {
 		max-height: 510px;
@@ -405,10 +410,12 @@ header.global nav.visible-phone select {
 	z-index: 9999;
 	right: 0;
 	top: 55%;	
+	line-height: 1.4;
 } 
 
 .story-header {
-	background: #222
+	background: #222;
+	line-height: 0;
 }
 .story-header:hover .post-title {
 	opacity: 0.3;
@@ -519,7 +526,7 @@ article {
 	border-bottom: 1px solid #000; 
 	padding-top:2px; 
 	padding-bottom:2px; 
-	margin-bottom:5px;
+	margin-bottom:1rem;
 	font-size: 14px !important;
 }
 
@@ -541,14 +548,13 @@ article {
 
 	font-weight: 400;
 	font-size: 21px;
-	float: left;
 	letter-spacing: 0.01em;
 	font-style: normal;
 	line-height: 1.5;
 }
 
 .article .entry-content p {
-	max-width: 700px;
+	max-width: 860px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -561,13 +567,13 @@ article {
 }
 
 .entry-content .gallery-size-thumbnail {
+	dis
 	position: relative;
-	clear: both;
-	float: left;
+	text-align: center;
 }
 
 .entry-content .gallery-size-thumbnail .gallery-item {
-	float: left;
+	display: inline-block;
 	margin: 2.859%;
 	width: 19%;
 }
@@ -579,7 +585,6 @@ article {
 .article .entry footer.author {
 	border-top: 1px solid #444;
 	border-bottom: 1px solid #444;
-	clear: both;
 	padding: 20px 0;
 	margin-top: 25px;
 }

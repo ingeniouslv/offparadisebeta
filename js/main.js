@@ -54,18 +54,20 @@
 		/* $("header.global").sticky({ topSpacing: 0, className: 'sticky' }); */
 		
 		$(window).load(function() {
-			/* Carousel
-			-------------------------------------------- */
-			$('#slideshow').flexslider({
-				animation	: "fade",
-				maxItems	: 1,
-				move		: 1,
-				selector	: ".slide",
-				keyboard	: true
-			});
+			if( $('#slideshow').length ) {
+				/* Carousel
+				-------------------------------------------- */
+				$('#slideshow').flexslider({
+					animation	: "fade",
+					maxItems	: 1,
+					move		: 1,
+					selector	: ".slide",
+					keyboard	: true
+				});
+			}
 		});
 		
-		if( $('.video-wrapper')[0] ) {
+		if( $('.video-wrapper').length ) {
 			$('.video-wrapper').fitVids();
 		}
 		
